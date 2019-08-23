@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+build/*
+*.pyc
+docs-build/
+dist/
+ObjectListView2.egg-info/
+venv/*
+.idea/*
