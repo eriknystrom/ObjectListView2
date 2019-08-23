@@ -1,9 +1,9 @@
-.. -*- coding: UTF-8 -*-
-
-ObjectListView
+ObjectListView2
 ==============
 
 This is an upload of olv 1.3.2 from https://bitbucket.org/wbruhin/objectlistview/src/default/ 
+
+
 
 *An ObjectListView is a wrapper around the wx.ListCtrl that makes the
 list control easier to use. It also provides some useful extra functionality.*
@@ -59,3 +59,7 @@ Cloning using https::
 
 
 The original project was hosted on `SourceForge <https://sourceforge.net/project/showfiles.php?group_id=225207&package_id=280564>`_.
+
+
+
+TODO: Update readme
