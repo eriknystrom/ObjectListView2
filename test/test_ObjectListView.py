@@ -314,12 +314,12 @@ class TestObjectListView(wtc.WidgetTestCase):
         self.objectListView.useAlternateBackColors = False
         self.objectListView.RepopulateList()
         bkgdColours = [
-            self.getBackgroundColour(i)
+            self.getBackgroundColour(i).GetIM()
             for i in range(self.objectListView.GetItemCount())]
         self.assertFalse(
-            self.objectListView.oddRowsBackColor in set(bkgdColours))
+            self.objectListView.oddRowsBackColor.GetIM() in set(bkgdColours))
         self.assertFalse(
-            self.objectListView.evenRowsBackColor in set(bkgdColours))
+            self.objectListView.evenRowsBackColor.GetIM() in set(bkgdColours))
 
     def testAlternateColours(self):
         self.objectListView.useAlternateBackColors = True
