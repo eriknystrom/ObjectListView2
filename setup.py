@@ -54,13 +54,18 @@ CLASSIFIERS = [
     'Topic :: Software Development :: User Interfaces',
 ]
 
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 from setuptools import setup
 
 setup(
     name=NAME,
     version=VERSION,
     description=DESCRIPTION,
-    long_description=LONG_DESCRIPTION,
+    long_description=long_description,
+    long_description_content_type='test/markdown',
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     maintainer=MAINTAINER,

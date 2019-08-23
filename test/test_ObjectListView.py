@@ -10,6 +10,18 @@ import six
 from ObjectListView2 import ObjectListView, FastObjectListView, VirtualObjectListView, GroupListView, ColumnDefn, EVT_SORT, Filter
 
 
+class TestDecorations(unittest.TestCase):
+
+    def testInitialState(self):
+        pass
+
+
+class TestBlocks(unittest.TestCase):
+
+    def testInitialState(self):
+        pass
+
+
 class Person:
 
     def __init__(self, name, birthdate, sex):
@@ -19,6 +31,7 @@ class Person:
 
     def age(self):
         return datetime.datetime.now().year - self.birthdate.year
+
 
 personColumns = [
     ("Name", "left", -1, "name"),
