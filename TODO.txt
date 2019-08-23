@@ -1,6 +1,13 @@
 .. -*- coding: UTF-8 -*-
 
-TO DO
+TO DO - New
+=====
+- Update readme.md with new info
+- Establish a project workflow and support model
+- Update todo stuff
+
+
+TO DO - Old
 =====
 
 - document release steps for PyPi
