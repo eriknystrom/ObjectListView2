@@ -16,7 +16,7 @@
 An ObjectListView provides a more convienent and powerful interface to a ListCtrl.
 """
 
-__version__ = '1.3.2'
+__version__ = '1.0.1'
 __copyright__ = "Copyright (c) 2008 Phillip Piper (phillip_piper@bigfoot.com)"
 
 from . ObjectListView import ObjectListView, VirtualObjectListView, ColumnDefn, FastObjectListView, GroupListView, ListGroup, BatchedUpdate, NamedImageList

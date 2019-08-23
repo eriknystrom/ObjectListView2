@@ -43,6 +43,7 @@ Editor Registry
     The editor registry remembers a function that will be called to create
     an editor for a given type.
 """
+import sys
 
 __author__ = "Phillip Piper"
 __date__ = "3 May 2008"
@@ -259,13 +260,21 @@ class LongEditor(BaseCellTextEditor):
         "Get the value from the editor"
         s = super(LongEditor, self).GetValue().strip()
         try:
-            return long(s)
+            if sys.version_info < (3,):
+                return long(s)
+            else:
+                return int(s)
         except ValueError:
             return None
 
     def SetValue(self, value):
         "Put a new value into the editor"
-        if isinstance(value, (long, int, float)):
+        if sys.version_info < (3,):
+            number_types = (int, long, float)
+        else:
+            number_types = (int, float)
+
+        if isinstance(value, number_types):
             value = repr(value)
         super(LongEditor, self).SetValue(value)
 
