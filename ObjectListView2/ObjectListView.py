@@ -964,7 +964,7 @@ class ObjectListView(wx.ListCtrl):
         # free space
         for (i, col) in columnsToResize:
             newWidth = freeSpace * col.freeSpaceProportion / totalProportion
-            boundedWidth = (int)col.CalcBoundedWidth(newWidth)
+            boundedWidth = int(col.CalcBoundedWidth(newWidth))
             if self.GetColumnWidth(i) != boundedWidth:
                 self.SetColumnWidth(i, boundedWidth)
 
@@ -3780,8 +3780,12 @@ class ColumnDefn(object):
         if converter and isinstance(value, wx.DateTime):
             return value.Format(self.stringConverter)
 
-        # By default, None is changed to an empty string.
-        if not converter and not value:
+        #For some values like pandas.NA, not <obj> throws an exception
+        try:
+            # By default, None is changed to an empty string.
+            if not converter and not value:
+                return ""
+        except:
             return ""
 
         fmt = converter or "%s"
